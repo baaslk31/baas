@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>baas.lk</title>
+
+<link href="main.css" rel="stylesheet">
+
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<link href="loginBox.css" rel="stylesheet">
+<style type="text/css">
+
+
+<style>
+
+#apDiv7 {
+	position:absolute;
+	left:337px;
+	top:519px;
+	width:553px;
+	height:177px;
+	z-index:8;
+}
+#apDiv7 {
+	position: absolute;
+	left: 0px;
+	top: 118px;
+	width: 100%;
+	height: 205px;
+	z-index: 8;
+	background-color: rgba(0,0,0,0.5);
+}
+#apDiv8 {
+	position: absolute;
+	left: 112px;
+	top: 171px;
+	width: 543px;
+	height: 85px;
+	z-index: 9;
+}
+#apDiv9 {
+	position: absolute;
+	left: 116px;
+	top: 165px;
+	width: 500px;
+	height: 85px;
+	z-index: 9;
+}
+#apDiv10 {
+	position: absolute;
+	left: 476px;
+	top: 102px;
+	width: 100%;
+	height: 535px;
+	z-index: 5;
+}
+#apDiv11 {
+	position: absolute;
+	left: auto;
+	top: 60px;
+	width: 140px;
+	height: 535px;
+	z-index: 9;
+	right: 0px;
+	background-color: rgba(0,0,0,0.8);
+}
+#apDiv12 {
+	position: absolute;
+	left: auto;
+	top: 60px;
+	width: 135px;
+	height: 548px;
+	z-index: 5;
+	background-color: rgba(0,0,0,0.5);
+	right: 0px;
+}
+.fbPic {
+	position: absolute;
+	width: 264px;
+	height: 50px;
+	left: 113px;
+	top: 254px;
+}
+.fbButton {
+	background-image: url(fbButton.png);
+	position: absolute;
+	width: 299px;
+	top: 259px;
+	height: 42px;
+	background-repeat: no-repeat;
+	left: 80px;
+}
+.RoundButton {
+	background-color: rgba(0,204,153,0.4);
+	position: absolute;
+	left: 956px;
+	top: 87px;
+	width: 103px;
+	height: 101px;
+	border-radius: 50px;
+}
+#apDiv13 {
+	position: absolute;
+	left: 273px;
+	top: 391px;
+	width: 100px;
+	height: 100px;
+	z-index: 9;
+	border-radius: 50;
+}
+</style>
+
+
+
+<script language="JavaScript">
+function setVisibility(id) {
+if(document.getElementById('bt1').value=='Login'){
+document.getElementById('bt1').value = 'Log-in';
+document.getElementById(id).style.display = 'none';
+}else{
+document.getElementById('bt1').value = 'Login';
+document.getElementById(id).style.display = 'inline';
+}
+}
+
+</script>
+
+
+<script type="text/javascript">
+        function codeAddress() {
+            setVisibility('apDivLogin');
+        }
+        window.onload = codeAddress;
+		
+        </script>
+
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+
+<div id="apDiv1"> 
+
+<img src="Untitled-1.png" width="210" height="94" alt="baas logo">
+</div>
+
+<div id="apDiv2">
+  <p><em><strong>The best way to find a builder</strong></em></p>
+   
+</div>
+
+
+<div id="apDiv3">
+<ul id="MenuBar1" class="MenuBarHorizontal">
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="profile.html">PROFILE</a></li>
+<li><a href="wiki.html">WIKI</a></li>
+  <li><a href="bid.html">BIDD</a></li>
+  <li><a href="forum.html">FORUM</a></li>
+  <li><a href="tok-tok.html">FAQ</a></li>
+  <li><a href="#" class="MenuBarItemSubmenu">OTHER</a>
+    <ul>
+      <li><a href="#">Untitled Item</a></li>
+      <li><a href="#">Untitled Item</a></li>
+      <li><a href="#">Settings</a>        </li>
+</ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+</div>
+<div id="apDiv5">
+  <p>baas.lk    </p>
+  <p>All Rights Reserved </p>
+</div>
+<div id="signup"> 
+  <a href="signup.html">Sign up now</a>
+</div>
+<div class="Dropdn" id="apDiv7">
+  <label for="SearchBar"></label>
+  <label for="Area"></label>
+  <input name="SearchBar" type="text" class="SearchBar" id="SearchBar">
+  <form name="form1" method="post" action="">
+    <p class="check">
+      <label>
+        <input type="checkbox" name="CheckboxGroup1" value="checkbox" id="CheckboxGroup1_0">
+        Search By Rating</label>
+      <br>
+      <br>
+      <label>
+        <input type="checkbox" name="CheckboxGroup1" value="checkbox" id="CheckboxGroup1_2">
+        Search By Experience</label><br>
+    </p>
+  </form>
+  <input name="SearchButton" type="submit" class="MyButton" id="SearchButton" value="Submit">
+<label for="Select"></label>
+  <select name="Select" class="Dropdn" id="Select">
+    <option>ALL</option>
+    <option>Architect and Designer </option>
+    <option>Builder</option>
+    <option>Consultancy Service</option>
+    <option>Contractor</option>
+    <option>Material Supplier</option>
+    <option>Real Estate Company</option>
+    <option>Technician</option>
+  </select>
+  <label for="Area"></label>
+  <select name="Area" size="1" class="SearchTerm" id="Area">
+    <option>ANY AREA</option>
+    <option>Colombo</option>
+    <option>Kandy</option>
+    <option>Kurunegala</option>
+    <option>Galle</option>
+    <option>Anuradhapura</option>
+  </select>
+  
+  <input name="wrt" type="submit" class="Login" id="bt1" value="Login"onclick="setVisibility('apDivLogin');";">
+  </a>
+  <form name="form2" method="post" action="">
+  </form>
+</div>
+
+<div id="apDiv12"></div>
+<div id="apDiv13">
+<a href ="registerbaas.html">
+  <input name="RoundButton" type="submit" class="RoundButton" id="RoundButton" value="   Complete"></a>
+</div>
+<img src="construction+workers (1).jpg" width="1200" height="685">
+
+
+<div id="apDivLogin">
+  <p>
+    <label for="userNameText"></label>
+    <input name="userNameText" type="text" onFocus="this.value=''" value="   Your email here" class="UserNameText" id="userNameText">
+    <label for="passwordText"></label>
+    <input name="passwordText" type="text" onFocus="this.value=''" value="   Password" class="passwordText" id="passwordText">
+    <input name="loginButton" type="submit" class="loginButton" id="loginButton" value="Submit" onclick="setVisibility('apDivLogin', 'none');">
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><a href="login.html" class="white">Forgot your password or email?</a></p>
+  <p>
+ 
+
+  </p>
+  <p>
+   <a href="fbapp/wdd-sample.php">
+    <input name="fbButton" type="Submit" class="fbButton" id="fbButton" value=" "></a>
+  </p>
+  
+</div>
+</body>
+
+</html>

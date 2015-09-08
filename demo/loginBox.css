@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+#apDivLogin {
+	position: absolute;
+	left: auto;
+	top: 55px;
+	width: 427px;
+	height: 294px;
+	z-index: 8;
+	padding: 20px;
+	border-radius: 40px;
+	background-color: rgba(51,51,51,1);
+	right: 12px;
+	
+}
+.UserNameText {
+	position: absolute;
+	width: 356px;
+	height: 44px;
+	left: 57px;
+	top: 17px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	
+}
+.passwordText {
+	position: absolute;
+	left: 57px;
+	top: 79px;
+	width: 356px;
+	height: 44px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.loginButton {
+	background-color: rgba(0,204,204,1);
+	position: absolute;
+	left: 57px;
+	top: 155px;
+	width: 360px;
+	height: 44px;
+	border-radius: 15px;
+}
+
+.white{
+	color:white;
+}

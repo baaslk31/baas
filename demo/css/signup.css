@@ -1,0 +1,60 @@
+#apDiv7 {
+	position:absolute;
+	width:519px;
+	height:188px;
+	z-index:6;
+	left: 109px;
+	top: 80px;
+}
+.signupfont {
+	font-weight: bold;
+	color: #039;
+}
+#apDiv8 {
+	position:absolute;
+	width:400px;
+	height:221px;
+	z-index:6;
+	left: 284px;
+	top: 254px;
+}
+#appdiv9 {
+	height: 224px;
+	width: 394px;
+	visibility: visible;
+	z-index: 6;
+	left: 608px;
+	top: 176px;
+	position: absolute;
+	background-image: url(welcombaas.jpg);
+	background-repeat: no-repeat;
+}
+#appdiv10 {
+	background-image: url(join.jpg);
+	position: absolute;
+	visibility: visible;
+	z-index: 6;
+	top: 144px;
+	height: 171px;
+	width: 394px;
+	left: 887px;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.ajustment {
+	background-position: right;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: justify;
+}
+.submitbutton {
+	font-weight: bold;
+	color: #000;
+	background-color: #FC3;
+	position: absolute;
+	left: 232px;
+	top: 158px;
+	width: 107px;
+	height: 31px;
+}
