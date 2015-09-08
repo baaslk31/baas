@@ -1,0 +1,481 @@
+create database Baasdb;
+
+
+
+create table RegisteredUser(
+    email	char(40) not null,
+    password varchar(50) not null,
+    userName varchar(50) not null,
+    reg_user_ID int not null AUTO_INCREMENT,
+    primary key(reg_user_ID)
+    );
+
+
+create table Customer(
+    reg_user_ID INT not null,
+	customer_ID int not null AUTO_INCREMENT,
+    primary key(customer_ID),
+    FOREIGN KEY (reg_user_ID) REFERENCES RegisteredUser(reg_user_ID) 
+    );
+
+create table SystemAdministrator(
+    reg_user_ID INT not null,
+    sa_ID int not null AUTO_INCREMENT,
+    primary key(sa_ID),
+    FOREIGN KEY (reg_user_ID) REFERENCES RegisteredUser(reg_user_ID) 
+    );
+
+
+create table ServiceProvider(
+    reg_user_ID INT not null,
+    address varchar(100)  ,
+    contactNumber int not null,			
+    profilePicture varchar(200)  ,
+    description varchar(200) ,
+    previousWork varchar(200) ,
+    rating float(5) ,
+	 sp_ID int not null AUTO_INCREMENT,
+    primary key(sp_ID),
+    foreign key(reg_user_ID) references RegisteredUser(reg_user_ID)
+    );
+
+
+	
+create table ConsultancyService(
+    sp_ID int not null,
+	consult_ID int not null AUTO_INCREMENT,
+    primary key(consult_ID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );
+
+create table Technician(
+    sp_ID int not null,
+	 technician_ID int not null AUTO_INCREMENT,
+    primary key(technician_ID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );   
+
+
+create table RealEstateCompany(
+    sp_ID int not null,
+	realEstateCompanyID int not null AUTO_INCREMENT,
+    primary key(realEstateCompanyID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );   
+
+create table Contractor(
+    sp_ID int not null,
+	contractor_ID int not null AUTO_INCREMENT,
+    primary key(contractor_ID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );   
+
+create table Builder(
+    sp_ID int not null,
+	builder_ID  int not null AUTO_INCREMENT,
+    primary key(builder_ID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );   
+
+create table ArchitectDesigner(
+    sp_ID int not null,
+	 arch_Des_ID int not null AUTO_INCREMENT,
+    primary key(arch_Des_ID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );   
+create table MaterialSupplier(
+    sp_ID int not null,
+	    material_Sup_ID int not null AUTO_INCREMENT,
+    primary key(material_Sup_ID),
+    foreign key(sp_ID) references ServiceProvider(sp_ID)
+    );   
+
+
+
+**** consultanc
+
+create table Vaasthu(
+    consult_ID int not null,
+	vaasthu_ID int not null AUTO_INCREMENT,
+    primary key(vaasthu_ID),
+    foreign key(consult_ID) references ConsultancyService(consult_ID)
+    );
+    
+ create table Astrology(
+    consult_ID int not null,
+	 astrology_ID int not null AUTO_INCREMENT,
+    primary key(astrology_ID),
+    foreign key(consult_ID) references ConsultancyService(consult_ID)
+    );
+
+ create table NumerologyService(
+    consult_ID int not null,
+	numerology_ID int not null AUTO_INCREMENT,
+    primary key(numerology_ID),
+    foreign key(consult_ID) references ConsultancyService(consult_ID)
+    );
+ create table Fengshui(
+    consult_ID int not null,
+	fengshui_ID int not null AUTO_INCREMENT,
+    primary key(fengshui_ID),
+    foreign key(consult_ID) references ConsultancyService(consult_ID)
+    );
+       
+
+*** technician
+
+
+create table HandyMan(
+    technician_ID int not null,
+	 hand_ID int not null AUTO_INCREMENT,
+    primary key(hand_ID),
+    foreign key(technician_ID) references Technician(technician_ID)
+    );
+create table Electrician(
+    technician_ID int not null,
+	electrician_ID int not null AUTO_INCREMENT,
+    primary key(electrician_ID),
+    foreign key(technician_ID) references Technician(technician_ID)
+    );
+create table ACTechnician(
+    technician_ID int not null,
+	acTec_ID int not null AUTO_INCREMENT,
+    primary key(acTec_ID),
+    foreign key(technician_ID) references Technician(technician_ID)
+    );
+
+
+***realestate
+
+create table Broker(
+    realEstateCompanyID int not null,
+	broker_ID int not null AUTO_INCREMENT,
+    primary key(broker_ID),
+    foreign key(realEstateCompanyID) references RealEstateCompany(realEstateCompanyID)
+    );
+
+create table LandSalesCompany(
+    realEstateCompanyID int not null,
+	landsales_ID int not null AUTO_INCREMENT,
+    primary key(landsales_ID),
+    foreign key(realEstateCompanyID) references RealEstateCompany(realEstateCompanyID)
+    );
+
+
+*** builder
+
+create table Tiler(
+    builder_ID int not null,
+	tiler_ID int not null AUTO_INCREMENT,
+    primary key(tiler_ID),
+    foreign key(builder_ID) references Builder(builder_ID)
+    );
+create table Plumber(
+    builder_ID int not null,
+	plumber_ID int not null AUTO_INCREMENT,
+    primary key(plumber_ID),
+    foreign key(builder_ID) references Builder(builder_ID)
+    );
+create table Carpenter(
+    builder_ID int not null,
+	carpenter_ID int not null AUTO_INCREMENT,
+    primary key(carpenter_ID),
+    foreign key(builder_ID) references Builder(builder_ID)
+    );
+create table Painter(
+    builder_ID int not null,
+	painter_ID int not null AUTO_INCREMENT,
+    primary key(painter_ID),
+    foreign key(builder_ID) references Builder(builder_ID)
+    );
+create table Mason(
+    builder_ID int not null,
+	mason_ID int not null AUTO_INCREMENT,
+    primary key(mason_ID),
+    foreign key(builder_ID) references Builder(builder_ID)
+    );
+
+
+***architectdEsign
+
+
+create table Architect(
+    arch_Des_ID int not null,
+	architect_ID int not null AUTO_INCREMENT,
+    primary key(architect_ID),
+    foreign key(arch_Des_ID) references ArchitectDesigner(arch_Des_ID)
+    );
+
+create table Draftman(
+    arch_Des_ID int not null,
+	draftman_ID int not null AUTO_INCREMENT,
+    primary key(draftman_ID),
+    foreign key(arch_Des_ID) references ArchitectDesigner(arch_Des_ID)
+    );
+
+create table InteriorDesigner(
+    arch_Des_ID int not null,
+	interior_ID int not null AUTO_INCREMENT,
+    primary key(interior_ID),
+    foreign key(arch_Des_ID) references ArchitectDesigner(arch_Des_ID)
+    );
+
+create table LandscapeDesigner(
+    arch_Des_ID int not null,
+	landscape_ID int not null AUTO_INCREMENT,
+    primary key(landscape_ID),
+    foreign key(arch_Des_ID) references ArchitectDesigner(arch_Des_ID)
+    );
+
+
+
+***materialsupplier
+
+create table Brick(
+    material_Sup_ID int not null,
+	brick_ID int not null AUTO_INCREMENT,
+    primary key(brick_ID),
+    foreign key(material_Sup_ID) references MaterialSupplier(material_Sup_ID)
+    );
+
+create table Cement(
+    material_Sup_ID int not null,
+	 cement_ID int not null AUTO_INCREMENT,
+    primary key(cement_ID),
+    foreign key(material_Sup_ID) references MaterialSupplier(material_Sup_ID)
+    );
+
+create table Hardware(
+    material_Sup_ID int not null,
+	hardware_ID int not null AUTO_INCREMENT,
+    primary key(hardware_ID),
+    foreign key(material_Sup_ID) references MaterialSupplier(material_Sup_ID)
+    );
+create table Sand(
+    material_Sup_ID int not null,
+	sand_ID int not null AUTO_INCREMENT,
+    primary key(sand_ID),
+    foreign key(material_Sup_ID) references MaterialSupplier(material_Sup_ID)
+    );
+	
+
+
+
+****************
+
+
+create table Feedback(
+	fb_ID INT not null AUTO_INCREMENT,
+	sp_ID INT not null,
+	customer_ID INT not null,
+	job_ID INT not null,
+	rate float(5),
+	comments char(200),
+	date DATE not null,
+	primary key(fb_ID),
+	foreign key(sp_ID) references ServiceProvider(sp_ID),
+	foreign key(customer_ID) references Customer(customer_ID),
+	foreign key(job_ID) references Job(job_ID)
+	);
+
+create table Appointment(
+	app_ID INT not null AUTO_INCREMENT,
+	sp_ID INT not null,
+	customer_ID INT not null,
+	job_ID INT not null,
+	date DATE not null,
+	primary key(app_ID),
+	foreign key(sp_ID) references ServiceProvider(sp_ID),
+	foreign key(customer_ID) references Customer(customer_ID),
+	foreign key(job_ID) references Job(job_ID)
+	);
+
+
+
+create table Forum(
+	f_ID INT not null AUTO_INCREMENT,	
+	customer_ID INT not null,
+	date DATE not null,
+	time TIME not null,
+	conversation char(100);
+	primary key(f_ID),
+	foreign key(customer_ID) references Customer(customer_ID)
+	);
+
+create table Ads(
+	ad_ID INT not null AUTO_INCREMENT,
+	duration Time not null,
+	image varbinary(max),
+	sa_ID INT not null,
+	primary key(ad_ID),
+	foreign key(sa_ID) references SystemAdministrator(sa_ID)
+	);
+
+
+create table Bid(
+	bid_ID INT not null AUTO_INCREMENT,
+	landsales_ID INT not null,
+	customer_ID INT not null,
+	description char(200),
+	valueOfLand INT not null,
+	hightestBid INT not null,
+	primary key(bid_ID),
+	foreign key(landsales_ID) references LandSalesCompany(landsales_ID),
+	foreign key(customer_ID) references Customer(customer_ID)
+	);
+
+create table Job(
+	job_ID INT not null AUTO_INCREMENT,
+	customer_ID INT not null,
+	sp_ID INT not null,
+	description char(200),
+	date DATE not null,
+	primary key(job_ID),
+	foreign key(customer_ID) references Customer(customer_ID),
+	foreign key(sp_ID) references ServiceProvider(sp_ID)
+	);
+
+create table complaint(
+	complaint_ID INT not null AUTO_INCREMENT,
+	customer_ID INT not null,
+	sp_ID INT not null,
+	message char(200),
+	date DATE not null,
+	primary key(complaint_ID),
+	foreign key(customer_ID) references Customer(customer_ID),
+	foreign key(sp_ID) references ServiceProvider(sp_ID)
+	);
+
+create table wiki(
+	reg_user_ID INT not null AUTO_INCREMENT,
+	pageNum INT not null,
+	primary key(pageNum),
+	foreign key(reg_user_ID) references RegisteredUser(reg_user_ID)
+	);
+ 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
